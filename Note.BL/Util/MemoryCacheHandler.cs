@@ -63,7 +63,7 @@ namespace NoteAPI.BL.Util
                 {
                     string errorMessage = $"Key not found in the Memory Cache: {memoryKeyGuid.ToString()}";
                     log.Error(errorMessage);
-                    throw new MemoryCacheException(errorMessage);
+                    throw new MemoryCacheKeyException(errorMessage);
                 }
 
                 cachedObject = noteAPICache.Get(memoryKeyGuid.ToString());

@@ -28,7 +28,7 @@ namespace NoteAPI.Controllers
         }
 
 
-        [Route("user")]
+        [Route("user/{userId}")]
         [HttpGet]
         public HttpResponseMessage GetUser(Guid userId)
         {

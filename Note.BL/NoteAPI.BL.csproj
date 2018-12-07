@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExceptionHandling\AuthorizationException.cs" />
+    <Compile Include="ExceptionHandling\MemortCacheKeyException.cs" />
     <Compile Include="ExceptionHandling\MemoryCacheException.cs" />
     <Compile Include="Interfaces\INoteService.cs" />
     <Compile Include="Interfaces\IUserService.cs" />

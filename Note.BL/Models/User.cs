@@ -3,11 +3,9 @@
 namespace NoteAPI.BL.Models
 {
     public class User
-    {
-        [RegularExpression("^[0-9]*$", ErrorMessage = "OrderId must be numeric")]
+    {       
         public string FirstName { get; set; }
-
-        [RegularExpression("^[0-9]*$", ErrorMessage = "OrderId must be numeric")]
+       
         public string LastName { get; set; }
 
         public string Email { get; set; }

@@ -1,4 +1,5 @@
-﻿using NoteAPI.BL.Interfaces;
+﻿using NoteAPI.BL.ExceptionHandling;
+using NoteAPI.BL.Interfaces;
 using NoteAPI.BL.Models;
 using NoteAPI.BL.Util;
 using System;
@@ -12,10 +13,18 @@ namespace NoteAPI.BL
         {
             MemoryCacheHandler handler = new MemoryCacheHandler();
             Guid noteId = Guid.NewGuid();
-
+            bool noKey = false;
             note.NoteId = noteId;
+            List<UserNote> notes = null;
 
-            List<UserNote> notes = handler.GetFromCache<List<UserNote>>(note.UserId);
+            try
+            {
+               notes = handler.GetFromCache<List<UserNote>>(note.UserId);
+            }
+            catch(MemoryCacheKeyException ex)
+            {
+                noKey = true;
+            }
 
             if(notes == null)
             {
